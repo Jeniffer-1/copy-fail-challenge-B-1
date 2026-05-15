@@ -33,8 +33,6 @@ y dependencias Ubuntu 24.04 corregidas.
 4. Ejecuta:
    ```bash
    make setup    # descarga kernel + arma rootfs (~5 min)
-   make qemu     # arranca la VM vulnerable
-   ```
 
 Para salir de QEMU: `Ctrl+A` luego `X`.
 
