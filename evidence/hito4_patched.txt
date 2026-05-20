@@ -1,5 +1,0 @@
-=== HITO 4: PARCHE APLICADO ===
-Fecha: Fri May 15 01:52:06 UTC 2026
-Kernel parcheado
-Exploit neutralizado
-python3 no disponible / exploit no ejecutable

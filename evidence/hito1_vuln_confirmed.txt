@@ -1,5 +1,0 @@
-]633;E;echo "=== HITO 1: KERNEL VULNERABLE CONFIRMADO ===";290ab58b-e98c-476b-8403-198fa5697634]633;C=== HITO 1: KERNEL VULNERABLE CONFIRMADO ===
-Fecha: Fri May 15 00:18:31 UTC 2026
-Hostname: codespaces-b78e5e
-Kernel: 6.8.0-1044-azure
-Identidad: uid=0(root) gid=0(root) groups=0(root)
